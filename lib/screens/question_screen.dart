@@ -87,7 +87,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       }
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
 
-        return ResultScreen(correct: totalCorrect);
+        return ResultScreen(correct: totalCorrect, apiResponse: widget.apiResponse);
       }));
     } else {
       currentIndex++;
