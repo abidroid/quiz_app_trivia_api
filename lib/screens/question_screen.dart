@@ -114,108 +114,110 @@ class _QuestionScreenState extends State<QuestionScreen> {
         body: Container(
           margin: EdgeInsets.symmetric(horizontal: 20),
           width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ClipOval(
-                    child: Image(
-                      image: AssetImage('assets/images/icon.png'),
-                      width: 50,
-                      height: 50,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ClipOval(
+                      child: Image(
+                        image: AssetImage('assets/images/icon.png'),
+                        width: 50,
+                        height: 50,
+                      ),
                     ),
+                    Text(
+                      '${currentIndex + 1} / 10',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      '$remainingSeconds s',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  question,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
                   ),
-                  Text(
-                    '${currentIndex + 1} / 10',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  onPressed: (){_checkAnswer(0);},
+                  child: Text(
+                    options[0],
                     style: TextStyle(
-                      color: Colors.white,
+                      fontSize: 20,
                     ),
                   ),
-                  Text(
-                    '$remainingSeconds s',
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  onPressed: (){_checkAnswer(1);},
+                  child: Text(
+                    options[1],
                     style: TextStyle(
-                      color: Colors.white,
+                      fontSize: 20,
                     ),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                question,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                SizedBox(
+                  height: 16,
                 ),
-                onPressed: (){_checkAnswer(0);},
-                child: Text(
-                  options[0],
-                  style: TextStyle(
-                    fontSize: 20,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  onPressed: (){_checkAnswer(2);},
+                  child: Text(
+                    options[2],
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                SizedBox(
+                  height: 16,
                 ),
-                onPressed: (){_checkAnswer(1);},
-                child: Text(
-                  options[1],
-                  style: TextStyle(
-                    fontSize: 20,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  onPressed: (){_checkAnswer(3);},
+                  child: Text(
+                    options[3],
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                ),
-                onPressed: (){_checkAnswer(2);},
-                child: Text(
-                  options[2],
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                ),
-                onPressed: (){_checkAnswer(3);},
-                child: Text(
-                  options[3],
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }
