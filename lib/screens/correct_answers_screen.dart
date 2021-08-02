@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:quiz_app_trivia_api/models/api_response.dart';
 import 'package:quiz_app_trivia_api/util/constants.dart';
 
@@ -61,20 +60,23 @@ class CorrectAnswersScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Question # ${index + 1}',
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                         ),
                         Divider(
                           height: 2,
                         ),
+                        SizedBox(height: 8,),
+
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.0),
                               color: Colors.white70),
                           child: Text(
                             '${result.question}',
-                            style: TextStyle(fontWeight: FontWeight.w500),
+                            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                           ),
                         ),
+                        SizedBox(height: 8,),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: options[0] == result.correctAnswer
