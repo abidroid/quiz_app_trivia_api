@@ -82,9 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.amber,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
+                      backgroundColor: Colors.amber,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 10,
+                      )),
                   onPressed: () {
                     getQuestions();
                   },
